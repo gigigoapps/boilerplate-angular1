@@ -1,0 +1,6 @@
+node_modules/
+npm-debug.log
+www/
+src/app/templates.js
+src/app/constants.js
+parameters.json
