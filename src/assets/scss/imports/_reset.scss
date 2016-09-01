@@ -27,6 +27,17 @@ time, mark, audio, video {
  * HTML5 display-role reset for older browsers
  */
 
+* {
+   -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+           box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, li, ul {
+    padding: 0;
+    margin: 0
+}
+
 article, aside, details, figcaption, figure,
 footer, header, menu, nav, section,
 main, summary {

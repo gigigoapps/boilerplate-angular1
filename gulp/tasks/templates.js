@@ -4,7 +4,7 @@ const concat        = require('gulp-concat');
 const config        = require('../config');
 const error         = require('../error');
 
-gulp.task('templates', ['clean-templates'], function () {
+gulp.task('templates', function () {
     return gulp.src([config.paths.src+'/app/**/*.html'])
         .pipe(ngHtml2Js({'moduleName': 'templates', declareModule : true, prefix: '/app/'}))
         .pipe(concat('templates.js'))

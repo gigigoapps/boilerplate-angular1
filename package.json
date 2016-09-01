@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/gigigo-html5/gig-starter-angular1-kit#readme",
   "browser" : {
-      "components" : "./src/app/components/index.js"    
+      "components" : "./src/app/components/index.js",
+      "directives" : "./src/app/directives/index.js",
+      "app" : "./src/app/app.js"
   },
   "dependencies": {
     "angular": "^1.5.8",

@@ -9,9 +9,9 @@ fs.readdirSync('./gulp/tasks/').forEach((task) => {
 });
 
 gulp.task('start-dev', ['build'], function(done) {
-    runSequence('server', done);
-})
+    gulp.start('server', done);
+});
 
 gulp.task('build', ['clean'], function(done) {
-    runSequence(['html', 'images', 'data', 'templates', 'constants'], ['bundle'])
-})
+    runSequence(['html', 'images', 'data', 'templates', 'constants', 'sass'], ['bundle'], done)
+});
