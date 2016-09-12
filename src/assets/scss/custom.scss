@@ -1,4 +1,21 @@
 /*** Remove for your project ***/
+.wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+
+}
+
+.wrapper > * {
+  flex: 1 100%;
+}
+
+
 header {
     background: #F44336;
     min-height: 5rem;
@@ -9,6 +26,38 @@ header {
         font-size: 2rem;
         margin: 0;
     }
+}
+
+.menu {
+    min-height: calc(100vh - 5rem);
+    width: 20%;
+    background: #FFEBEE;
+    flex: 1 0px;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        border-bottom: 1px solid #EF9A9A;
+        padding: 1rem;
+        margin: 0;
+        cursor: pointer;
+
+        &:hover, &.active {
+            background: #EF9A9A;
+            color: white;
+            border-bottom: 1px solid white;
+        }
+    }
+
+}
+
+.main {
+    flex: 4 0px;
+    padding: 10px;
 }
 
 
