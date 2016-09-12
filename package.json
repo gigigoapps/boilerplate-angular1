@@ -17,15 +17,14 @@
     "url": "https://github.com/gigigo-html5/gig-starter-angular1-kit/issues"
   },
   "homepage": "https://github.com/gigigo-html5/gig-starter-angular1-kit#readme",
-  "browser" : {
-      "components" : "./src/app/components/index.js",
-      "directives" : "./src/app/directives/index.js",
-      "app" : "./src/app/app.js"
+  "browser": {
+    "components": "./src/app/components/index.js",
+    "directives": "./src/app/directives/index.js",
+    "app": "./src/app/app.js"
   },
   "dependencies": {
     "angular": "^1.5.8",
     "angular-ui-router": "^0.3.1",
-    "debug": "^2.2.0",
     "ui-router-components": "^1.0.0"
   },
   "devDependencies": {
@@ -44,11 +43,14 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
+    "lodash": "^4.15.0",
+    "preferences": "^0.2.1",
     "run-sequence": "^1.2.2",
     "stream-combiner2": "^1.1.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0",
-    "yeoman-generator": "^0.24.1"
+    "yeoman-generator": "^0.24.1",
+    "debug": "^2.2.0"
   }
 }
