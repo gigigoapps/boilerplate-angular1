@@ -9,8 +9,9 @@ import uiRouterComponent from 'ui-router-components';
 
 import Core from './core/core.module';
 import Directives from './directives/directives.module';
+import Services from './services/services.module';
 
-import { Home, Contact } from 'components';
+import { Home, Contact, Gallery } from 'components';
 
 const app = angular.module('app', [
     'constants',
@@ -19,8 +20,10 @@ const app = angular.module('app', [
     'ui.router.components',
     Core,
     Directives,
+    Services,
     Home,
-    Contact
+    Contact,
+    Gallery
 ]);
 
 export default app;
