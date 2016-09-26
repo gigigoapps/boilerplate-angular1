@@ -34,10 +34,13 @@
     "babelify": "^7.3.0",
     "browser-sync": "^2.14.0",
     "browserify": "^13.1.0",
+    "debug": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.0",
+    "gulp-image-resize": "^0.10.0",
+    "gulp-imagemin": "^3.0.3",
     "gulp-ng-constant": "^2.0.0-2",
     "gulp-ng-html2js": "^0.2.2",
     "gulp-notify": "^2.2.0",
@@ -52,7 +55,6 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0",
-    "yeoman-generator": "^0.24.1",
-    "debug": "^2.2.0"
+    "yeoman-generator": "^0.24.1"
   }
 }
