@@ -4,13 +4,15 @@ class MenuDirective {
         this.replace = true;
         this.templateUrl = __dirname + '/menu.view.html';
         this.$state = $state;
+        this.scope = {
+            display: '='
+        }
     }
     link(scope, element, attr) {
 
         scope.go = (route) => {
             this.$state.go(route);
         }
-
 
     }
 }

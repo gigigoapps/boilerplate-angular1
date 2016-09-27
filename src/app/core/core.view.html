@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <core-header></core-header>
-    <core-menu></core-menu>
+    <core-header menu-handler="$ctrl.menuHandler()"></core-header>
+    <core-menu display="$ctrl.displayMenu"></core-menu>
     <div ui-view="app-content" class="main"></div>
 </div>

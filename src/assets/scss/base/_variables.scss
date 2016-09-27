@@ -2,11 +2,17 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // Breakpoints
+// $bp-larger-than-mobile    : "min-width: 400px" !default;
+// $bp-larger-than-phablet   : "min-width: 550px" !default;
+// $bp-larger-than-tablet    : "min-width: 750px" !default;
+// $bp-larger-than-desktop   : "min-width: 1000px" !default;
+// $bp-larger-than-desktophd : "min-width: 1200px" !default;
+
 $bp-larger-than-mobile    : "min-width: 400px" !default;
-$bp-larger-than-phablet   : "min-width: 550px" !default;
-$bp-larger-than-tablet    : "min-width: 750px" !default;
-$bp-larger-than-desktop   : "min-width: 1000px" !default;
-$bp-larger-than-desktophd : "min-width: 1200px" !default;
+$bp-larger-than-phablet   : "min-width: 560px" !default;
+$bp-larger-than-tablet    : "min-width: 768px" !default;
+$bp-larger-than-desktop   : "min-width: 1024px" !default;
+$bp-larger-than-desktophd : "min-width: 1248px" !default;
 
 // Colors
 $primary-color: #14bae7 !default;

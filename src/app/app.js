@@ -11,6 +11,7 @@ import Core from './core/core.module';
 import Directives from './directives/directives.module';
 import Services from './services/services.module';
 
+
 import { Home, Contact, Gallery } from 'components';
 
 const app = angular.module('app', [
@@ -18,6 +19,7 @@ const app = angular.module('app', [
     'templates',
     'ui.router',
     'ui.router.components',
+    require('angular-animate'),
     Core,
     Directives,
     Services,
