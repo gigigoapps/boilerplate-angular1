@@ -8,7 +8,7 @@
 
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
-
+  
 }
 
 .wrapper > * {
@@ -17,12 +17,12 @@
 
 
 header {
-    background: #F44336;
+    background: $primary-color;
     min-height: 5rem;
     padding: 1rem;
 
     h1 {
-        color: white;
+        color: $quaternary-color;
         font-size: 2rem;
         margin: 0;
     }
@@ -31,7 +31,7 @@ header {
 .menu {
     min-height: calc(100vh - 5rem);
     width: 20%;
-    background: #FFEBEE;
+    background: $secondary-color;
     flex: 1 0px;
 
     ul {
@@ -41,13 +41,13 @@ header {
     }
 
     li {
-        border-bottom: 1px solid #EF9A9A;
+        border-bottom: 1px solid $tertiary-color;
         padding: 1rem;
         margin: 0;
         cursor: pointer;
 
         &:hover, &.active {
-            background: #EF9A9A;
+            background: $tertiary-color;
             color: white;
             border-bottom: 1px solid white;
         }

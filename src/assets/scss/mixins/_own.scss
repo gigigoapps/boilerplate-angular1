@@ -1,0 +1,214 @@
+/*
+* Own Mixins
+*/
+
+
+/*  TRUNCATE/ELLIPSIS   */
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+ 
+/*   MEDIA-QUERIES   */
+
+$breakpoints: ( "phone": 400px, "phone-wide": 480px, "phablet": 560px, "tablet-small": 640px, "tablet": 768px, "tablet-wide": 1024px, "desktop": 1248px, "desktop-wide": 1440px );
+
+
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+
+        @if $type == max {
+            $width: $width - 1px;
+        }
+
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+
+
+@mixin own-css3-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+     -moz-#{$property}: #{$value};
+      -ms-#{$property}: #{$value};
+          #{$property}: #{$value};
+}
+
+@mixin vendorAll($property, $value) {
+  -webkit-#{$property}: #{$value};
+     -moz-#{$property}: #{$value};
+      -ms-#{$property}: #{$value};
+       -o-#{$property}: #{$value};
+          #{$property}: #{$value};
+
+}
+
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+ 
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+/*   BORDER-RADIUS  */
+
+@mixin border-radius($radius: 5px) {
+    @include own-css3-prefix('border-radius', $radius);
+}
+
+/// Border Radius Separate
+/// @param {Size} $topLeftRadius [5px] - Top Left
+/// @param {Size} $topRightRadius [5px] - Top Right
+/// @param {Size} $bottomLeftRadius [5px] - Bottom Left
+/// @param {Size} $bottomRightRadius [5px] - Bottom Right
+
+@mixin border-radius-separate($topLeftRadius: 5px, $topRightRadius: 5px, $bottomLeftRadius: 5px, $bottomRightRadius: 5px) {
+  -webkit-border-top-left-radius:     $topLeftRadius;
+  -webkit-border-top-right-radius:    $topRightRadius;
+  -webkit-border-bottom-right-radius: $bottomRightRadius;
+  -webkit-border-bottom-left-radius:  $bottomLeftRadius;
+
+  -moz-border-radius-topleft:     $topLeftRadius;
+  -moz-border-radius-topright:    $topRightRadius;
+  -moz-border-radius-bottomright: $bottomRightRadius;
+  -moz-border-radius-bottomleft:  $bottomLeftRadius;
+
+  border-top-left-radius:     $topLeftRadius;
+  border-top-right-radius:    $topRightRadius;
+  border-bottom-right-radius: $bottomRightRadius;
+  border-bottom-left-radius:  $bottomLeftRadius;
+}
+
+
+
+/// Background Gradient
+/// @param {Color} $startColor [#3C3C3C] - Start Color
+/// @param {Color} $endColor [#999999] - End Color
+
+@mixin background-gradient($startColor: #3C3C3C, $endColor: #999999) {
+    background-color: $startColor;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(top, $startColor, $endColor);
+    background-image:    -moz-linear-gradient(top, $startColor, $endColor);
+    background-image:      -o-linear-gradient(top, $startColor, $endColor);
+    background-image:         linear-gradient(top, $startColor, $endColor);
+    filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}');
+}
+
+
+
+/// Background Horizontal
+/// @param {Color} $startColor [#3C3C3C] - Start Color
+/// @param {Color} $endColor [#999999] - End Color
+
+@mixin background-horizontal($startColor: #3C3C3C, $endColor: #999999) {
+    background-color: $startColor;
+    background-image: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(left, $startColor, $endColor);
+    background-image:    -moz-linear-gradient(left, $startColor, $endColor);
+    background-image:      -o-linear-gradient(left, $startColor, $endColor);
+    background-image:         linear-gradient(left, $startColor, $endColor);
+    }
+
+
+/// Background Radial
+/// @param {Color} $startColor [#3C3C3C] - Start Color
+/// @param {Percentage} $startPos [0%] - Start position
+/// @param {Color} $endColor [#999999] - End Color
+/// @param {Percentage} $endPos [100%] - End position
+
+@mixin background-radial($startColor: #FFFFFF, $startPos: 0%, $endColor: #000000, $endPos:100%) {
+    background: -moz-radial-gradient(center, ellipse cover, $startColor $startPos, $endColor $endPos);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop($startPos,$startColor), color-stop($endPos,$endColor));
+    background: -webkit-radial-gradient(center, ellipse cover, $startColor $startPos,$endColor $endPos);
+    background: radial-gradient(ellipse at center, $startColor $startPos,$endColor $endPos);
+}
+
+
+/// Box Shadow
+/// @param {Size} $x [2px] - X
+/// @param {Size} $y [2px] - Y
+/// @param {Size} $blur [5px] - Blur
+/// @param {Color} $color [rgba(0,0,0,.4)] - Color
+/// @param {Boolean} $inset - Inset
+
+@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $inset: "") {
+  @if ($inset != "") {
+    @include own-css3-prefix('box-shadow', $inset $x $y $blur $color);
+  } @else {
+    @include own-css3-prefix('box-shadow', $x $y $blur $color);
+  }
+}
+
+
+/// Double Borders
+/// @param {Color} $colorOne [#3C3C3C] - Color One
+/// @param {Color} $colorTwo [#999999] - Color Two
+/// @param {Size} $radius [0] - Radius
+/// @require {mixin} css3-prefix
+/// @require {mixin} border-radius
+
+@mixin double-borders($colorOne: #3C3C3C, $colorTwo: #999999, $radius: 0) {
+  border: 1px solid $colorOne;
+
+  @include own-css3-prefix('box-shadow', 0 0 0 1px $colorTwo);
+
+  @include border-radius( $radius );
+}
+
+
+/// Text Shadow
+/// @param {Size} $x [2px] - X
+/// @param {Size} $y [2px] - Y
+/// @param {Size} $blur [2px] - Blur
+/// @param {Color} $color [rgba(0,0,0,.4)] - Color
+
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+    text-shadow: $x $y $blur $color;
+}
+
+
+/// Keyframes
+/// @param {*} $animation-name - Animation name
+/// @content [Animation css]
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+
+/// Vertical-align
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+
+   
