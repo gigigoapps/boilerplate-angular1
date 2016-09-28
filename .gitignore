@@ -4,3 +4,5 @@ www/
 src/app/templates.js
 src/app/constants.js
 parameters.json
+.idea
+.DS_Store
