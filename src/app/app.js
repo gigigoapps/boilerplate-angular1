@@ -1,7 +1,4 @@
 import angular from 'angular';
-
-import constants from './constants';
-import templates from './templates';
 import register from './utils/register';
 
 import uiRouter from 'angular-ui-router';
@@ -17,8 +14,6 @@ import "./../assets/scss/general.scss";
 import { Home, Contact, Gallery } from 'components';
 
 const app = angular.module('app', [
-    'constants',
-    'templates',
     'ui.router',
     'ui.router.components',
     Core,
