@@ -1,8 +1,10 @@
+import template from ".//menu.view.html"
+
 class MenuDirective {
     constructor($state) {
         this.restrict = 'E';
         this.replace = true;
-        this.templateUrl = __dirname + '/menu.view.html';
+        this.template = template;
         this.$state = $state;
     }
     link(scope, element, attr) {

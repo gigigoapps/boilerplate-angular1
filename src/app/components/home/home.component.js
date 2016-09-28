@@ -1,6 +1,8 @@
+import template from './home.view.html'
+
 export default {
     controller: 'HomeController',
-    templateUrl: __dirname + '/home.view.html',
+    template: template,
     bindings: {
         data: '<'
     }

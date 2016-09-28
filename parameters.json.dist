@@ -1,7 +1,6 @@
 {
-    "constants" : {
-        "API_URL" : "https://jsonplaceholder.typicode.com",
-        "TIMEOUT" : 5000,
-        "LOG"     : true
-    }
+    "API_URL" : "https://jsonplaceholder.typicode.com",
+    "TIMEOUT" : 5000,
+    "LOG"     : true
+
 }

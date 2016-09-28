@@ -1,6 +1,8 @@
+import template from './gallery.view.html'
+
 export default {
     controller: 'GalleryController',
-    templateUrl: __dirname + '/gallery.view.html',
+    template: template,
     bindings: {
         photos: '<'
     }

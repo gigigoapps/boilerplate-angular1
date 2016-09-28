@@ -1,8 +1,10 @@
+import template from './header.view.html'
+
 class HeaderDirective {
     constructor() {
         this.restrict = 'E';
         this.replace = true;
-        this.templateUrl = __dirname + '/header.view.html';
+        this.template = template;
     }
 }
 

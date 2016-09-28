@@ -1,7 +1,8 @@
-import Base from 'app/utils/base';
+import Base from '../utils/base';
+import parameters from "./../../../parameters.json"
 
 export class ApiService extends Base {
-    constructor($log, $http, $q, API_URL) {
+    constructor($log, $http, $q) {
         super(__filename,arguments);
     }
     _error(data) {
@@ -25,8 +26,8 @@ export class ApiService extends Base {
     }
     request(options) {
         let defer = this.$q.defer();
-
-        options.url = this.API_URL + options.url;
+        debugger;
+        options.url = parameters.API_URL + options.url;
 
         this.$http({
             method: options.method,
@@ -50,16 +51,15 @@ export class ApiService extends Base {
 }
 
 
-export function ApiConfig($httpProvider, $logProvider, TIMEOUT, LOG) {
+export function ApiConfig($httpProvider, $logProvider) {
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
-
-    $httpProvider.defaults.timeout = TIMEOUT;
+    $httpProvider.defaults.timeout = parameters.TIMEOUT;
     //$httpProvider.defaults.withCredentials = true;
     $httpProvider.useApplyAsync(true);
     $httpProvider.defaults.headers.common['Content-Type'] = 'application/json';
     $httpProvider.defaults.headers.common['x-dev-html-off'] = 1;
     $httpProvider.defaults.headers.common['x-device-id'] = '1000';
 
-    $logProvider.debugEnabled(LOG);
+    $logProvider.debugEnabled(parameters.LOG);
 }

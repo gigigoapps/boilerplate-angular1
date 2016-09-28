@@ -1,4 +1,7 @@
+import template from './contact.view.html'
+
 export default {
     controller: 'ContactController',
-    templateUrl: __dirname + '/contact.view.html'
+    controllerAs: 'contract',
+    template: template
 }

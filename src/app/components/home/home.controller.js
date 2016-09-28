@@ -1,4 +1,4 @@
-import Base from 'app/utils/base';
+import Base from '../../utils/base';
 
 export default class HomeController extends Base {
     constructor() {

@@ -1,5 +1,7 @@
+import template from './core.view.html'
+
 export default {
     controller: 'CoreController',
     controllerAs: 'core',
-    templateUrl: __dirname + '/core.view.html'
+    template:  template
 }
