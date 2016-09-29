@@ -11,9 +11,9 @@ module.exports = function(config) {
 
       // each file acts as entry point for the webpack configuration
     ],
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
     frameworks: ['jasmine'],
-    reporters: ['coverage'],
+    reporters: ['coverage', 'progress'],
     preprocessors: {
       // add webpack as preprocessor
       './app/bundle.js': ['webpack'],
