@@ -1,5 +1,5 @@
 import Base from '../utils/base';
-import parameters from "./../../../parameters.json"
+import parameters from "parameters"
 
 export class ApiService extends Base {
     constructor($log, $http, $q) {

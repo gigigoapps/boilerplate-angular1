@@ -6,3 +6,4 @@ src/app/constants.js
 parameters.json
 .idea
 .DS_Store
+coverage/
