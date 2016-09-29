@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start",
+    "protactor": "node_modules/.bin/protractor test/protactor/conf.js",
     "start-dev": "webpack-dev-server -d --hot --inline ",
     "build": "webpack -d"
   },
@@ -52,6 +53,7 @@
     "lodash": "^4.15.0",
     "node-sass": "^3.10.0",
     "preferences": "^0.2.1",
+    "protractor": "^4.0.9",
     "run-sequence": "^1.2.2",
     "sass-loader": "^4.0.2",
     "stream-combiner2": "^1.1.1",
