@@ -47,6 +47,7 @@
     "gulp-util": "^3.0.7",
     "lodash": "^4.15.0",
     "preferences": "^0.2.1",
+    "replace": "^0.3.0",
     "run-sequence": "^1.2.2",
     "stream-combiner2": "^1.1.1",
     "vinyl-buffer": "^1.0.0",
