@@ -27,6 +27,7 @@ function compile(watch) {
         .pipe(source('bundle.js'))
         .pipe(buffer())
         .pipe(sourcemaps.init({ loadMaps: config.sourcemap }))
+        .pipe(gulpif(config.parameters[config.environment].compress,uglify({mangle: false})))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(config.paths.dist+'/assets/js'));
     }

@@ -1,7 +1,34 @@
 {
-    "constants" : {
-        "API_URL" : "https://jsonplaceholder.typicode.com",
-        "TIMEOUT" : 5000,
-        "LOG"     : true
+    "dev" : {
+        "constants" : {
+            "API_URL" : "",
+            "TIMEOUT" : 5000,
+            "LOG"     : true
+        },
+        "compress" : false
+    },
+    "staging" : {
+        "constants" : {
+            "API_URL" : "",
+            "TIMEOUT" : 5000,
+            "LOG"     : true
+        },
+        "compress" : false
+    },
+    "quality" : {
+        "constants" : {
+            "API_URL" : "",
+            "TIMEOUT" : 5000,
+            "LOG"     : true
+        },
+        "compress" : true
+    },
+    "live" : {
+        "constants" : {
+            "API_URL" : "",
+            "TIMEOUT" : 5000,
+            "LOG"     : true
+        },
+        "compress" : true
     }
 }

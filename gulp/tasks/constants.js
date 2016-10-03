@@ -1,14 +1,13 @@
 const gulp          = require('gulp');
 const ngConstant    = require('gulp-ng-constant');
 const rename        = require('gulp-rename');
-const parameters    = require('../../parameters.json');
 const config        = require('../config');
 const error         = require('../error');
 
 
 gulp.task('constants', function (done) {
 
-    var constants = parameters.constants;
+    var constants = config.parameters[config.environment].constants;
 
     var name = 'constants';
     return ngConstant({
