@@ -1,15 +1,19 @@
 var path = require('path'),
     webpack = require('webpack'),
     ExtractTextPlugin = require("extract-text-webpack-plugin");
-HtmlWebpackPlugin = require("html-webpack-plugin");
+    HtmlWebpackPlugin = require("html-webpack-plugin");
 
 var outPath = path.join(__dirname, 'dist');
 
 module.exports = {
-    entry: './src/app/app.js',
+    entry: {
+      app: './src/app/app.js',
+      vendor: ['angular', 'oclazyload']
+    },
     output: {
         path: './dist',
-        filename: 'bundle.js',
+        filename: '[name]-bundle.js',
+        chunkFilename: "./[name].js"
     },
     module: {
         preLoaders: [{
@@ -21,10 +25,8 @@ module.exports = {
         loaders: [{
             test: /\.js$/,
             exclude: /node_modules/,
-            loader: 'babel',
-            query: {
-                presets: ['es2015']
-            }
+            loader: 'babel'
+
         }, {
             test: /\.html$/,
             loader: "html"
@@ -46,7 +48,6 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin("bundle.css"),
-        //new HtmlWebpackPlugin()
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false,
@@ -59,7 +60,7 @@ module.exports = {
     ],
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
-        port: 3000
+        port: 8080
     }
 
 

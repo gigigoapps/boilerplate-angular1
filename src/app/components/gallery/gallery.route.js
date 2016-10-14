@@ -13,6 +13,20 @@ export default function($stateProvider) {
                         }
                     }
                 }
-            }
+            },
+            resolve: {
+                        foo: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
+                            let deferred = $q.defer();
+                            require.ensure([], function () {
+                                let module = require('./../components/gallery/gallery.module.js');
+                                $ocLazyLoad.load({
+                                    name: 'app.gallery'
+                                });
+                                deferred.resolve(module);
+                            });
+
+                            return deferred.promise;
+                        }]
+                    }
         })
 }

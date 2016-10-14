@@ -2,8 +2,6 @@ import template from './gallery.view.html'
 
 export default {
     controller: 'GalleryController',
-    template: template,
-    bindings: {
-        photos: '<'
-    }
+    template: template
+
 }

@@ -8,20 +8,24 @@ import Core from './core/core.module';
 import Directives from './directives/directives.module';
 import Services from './services/services.module';
 
+import oclazyload from 'oclazyload'
+
+
 import "./../assets/scss/general.scss";
 
 
-import { Home, Contact, Gallery } from 'components';
+import { Home} from 'components';
 
 const app = angular.module('app', [
     'ui.router',
     'ui.router.components',
+    oclazyload,
     Core,
     Directives,
     Services,
-    Home,
-    Contact,
-    Gallery
-]);
+    Home
+
+])
+
 
 export default app;
