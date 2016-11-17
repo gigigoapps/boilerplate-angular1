@@ -11,12 +11,17 @@ const error         = require('../error');
 const pxtorem       = require('gulp-pxtorem');
 const pxtoremOptions = {
     replace: true,
+    rootValue: 10,
+    unitPrecision: 5,
     prop_white_list: [
                 'width','min-width', 'max-width',
                 'height', 'min-height', 'max-height',
                 'margin', 'margin-left', 'margin-right', 'margin-top', 'margin-bottom',
                 'padding', 'padding-left', 'padding-right', 'padding-top', 'padding-bottom',
+                'border', 'border-width',
                 'font', 'font-size', 'line-height', 'letter-spacing'],
+    mediaQuery: true,
+    minPixelValue: 0
 };
  
 const postcssOptions = {

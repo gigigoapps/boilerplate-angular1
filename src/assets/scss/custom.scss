@@ -1,8 +1,14 @@
 /*** Remove for your project ***/
 
+
 body {
     //pxtorem test
-    min-height:500px;
+    min-height:800px;
+    border: 1px solid #ccc;
+    border-width:1px;
+    @media (min-width:769px) {
+        border-width:2px;
+    }
 }
 
 header {
